@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Ben Kimim";
+    ViewBag.description = "Hakkımda bi kaç ufak bilgi öğrenmeye ne dersin...";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.about
+
+<!-- ReadMore post-->
+
+<center>
+    <a href="#!"><img class="card-img-top w-50 vh-50 " src="~/Content/image/undraw_profile_2.svg" alt="..." /></a>
+</center>
+<div class="card-body">
+    <div class="small text-muted">@Model.title</div>
+    <p class="card-text">@Model.description</p>
+</div>
+<div class="card-footer">
+    <p class="badge bg-dark"><a href="#" class="text-white">Youtube : @Model.youtube</a></p>
+    <p class="badge bg-dark"><a href="#" class="text-white">Instagram : @Model.instagram</a></p>
+    <p class="badge bg-dark"><a href="#" class="text-white">Twitter : @Model.twitter</a></p>
+    <p class="badge bg-dark"><a href="#" class="text-white">Linkedin : @Model.linkedin</a></p>
+    <p class="badge bg-dark"><a href="#" class="text-white">Githup : @Model.githup</a></p>
+    <p class="badge bg-dark"><a href="#" class="text-white">Facebook : @Model.facebook</a></p>
+</div>

@@ -1,0 +1,26 @@
+﻿@model List<_01_WebApplication.dbBlog.Entity.Entity.tags>
+
+<table class="table table-bordered table-hover text-center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+    </thead>
+
+    <tbody>
+          @foreach (var item in Model)
+          {
+              <tr>
+                  <td>@item.Id</td>
+                  <td>@item.name</td>
+                  <td>@item.description</td>
+                  <td><a href="/Tags/Update/@item.Id" class="btn btn-warning">UPDATE</a></td>
+                  <td><a href="/Tags/Delete/@item.Id" class="btn btn-danger">DELETE</a></td>
+              </tr>
+          }
+    </tbody>
+</table>

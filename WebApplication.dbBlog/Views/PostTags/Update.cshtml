@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.post_tags
+
+@using (Html.BeginForm("Update", "PostTags", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.Label("POST ADI")
+    @Html.DropDownListFor(x => x.postId, (List<SelectListItem>)ViewBag.post, new { @class = "form-control" })
+    <br />
+    @Html.Label("TAG ADI")
+    @Html.DropDownListFor(x => x.tagsId, (List<SelectListItem>)ViewBag.tag, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" type="submit">Güncelle</button>
+    <br />
+}

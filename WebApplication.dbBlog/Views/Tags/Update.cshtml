@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.tags
+
+@using (Html.BeginForm("Update", "Tags", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.Id)
+    <br />
+    @Html.Label("Tag Name")
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" });
+    <br />
+    @Html.Label("Description")
+    @Html.TextBoxFor(x => x.description, new { @class = "form-control" });
+    <br />
+    <button class="btn btn-primary">Güncelle</button>
+}
+

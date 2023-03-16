@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.categories
+
+@using (Html.BeginForm("Index", "Categories", FormMethod.Post))
+{
+    <label>Kategori Adı</label>
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" type="submit">Kaydet!</button>
+}
+<br />
+@Html.Action("GetViewResult") 

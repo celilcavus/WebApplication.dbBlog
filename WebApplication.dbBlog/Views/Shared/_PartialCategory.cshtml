@@ -1,0 +1,19 @@
+﻿@model List<_01_WebApplication.dbBlog.Entity.Entity.categories>
+
+
+<!-- Categories widget-->
+<div class="card mb-4">
+    <div class="card-header">Categories</div>
+    <div class="card-body">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6">
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="/Index/GetByIdCategory/@item.Id">@item.name</a></li>
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</div>

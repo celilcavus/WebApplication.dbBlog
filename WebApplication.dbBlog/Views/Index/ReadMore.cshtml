@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Read More";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Views.ViewPosts
+<!-- ReadMore post-->
+<a href="#!"><img class="card-img-top w-100 vh-100" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+<div class="card-body">
+    <div class="small text-muted">@Model.created_at.Value.ToShortDateString()</div>
+    <h2 class="card-title h4">@Model.title</h2>
+    <p class="card-text">@Model.content</p>
+</div>
+<div class="card-footer">
+    <p class="badge bg-dark"><a href="/index/GetByIdCategory/@Model.CategoryId" class="text-white">Kategori : @Model.name</a></p>
+    <p class="badge bg-dark"><a href="/index/Author/@Model.UserId" class="text-white">Yazar : @Model.username</a></p>
+</div>

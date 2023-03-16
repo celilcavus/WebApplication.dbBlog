@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "İletişim";
+    ViewBag.description = "Benimle iletişime geçmeye ne dersin?";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.contact
+@using (Html.BeginForm("Contact", "Index", FormMethod.Post))
+{
+    @Html.Label("Adınız :")
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Soyadınız :")
+    @Html.TextBoxFor(x => x.lastname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Telefon Numaranız (Zorunlu değildir) :")
+    @Html.TextBoxFor(x => x.phoneNumber, new { @class = "form-control", @type = "tel" })
+    <br />
+    @Html.Label("Email Adresiniz (Sizinle iletişime geçmemiz için zorunlu bir alandır) :")
+    @Html.TextBoxFor(x => x.emailAdres, new { @class = "form-control", @type = "email" })
+    <br />
+    @Html.Label("Açıklama :")
+    @Html.TextAreaFor(x => x.description, new { @class = "form-control w-100", @style = "height:200px;", @type = "email" })
+    <br />
+    <button type="submit" class="btn btn-primary w-25 mb-4">Gönder</button>
+}

@@ -1,0 +1,18 @@
+﻿@model List<_01_WebApplication.dbBlog.Entity.Entity.posts>
+
+
+<!-- Blog post-->
+@foreach (var item in Model)
+{
+    <div class="col-lg-6">
+        <div class="card mb-4">
+            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+            <div class="card-body">
+                <div class="small text-muted">@item.created_at.ToShortDateString()</div>
+                <h2 class="card-title h4">@item.title</h2>
+                <p class="card-text">@item.content</p>
+                <a class="btn btn-primary" href="/index/ReadMore/@item.id">Read more →</a>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = string.Concat("Merhaba ben ",Model.username);
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.users
+<!-- Author -->
+<a href="#!"><img class="card-img-top w-100 vh-100" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+<div class="card-body">
+    <div class="small text-muted">@Model.username</div>
+    <h2 class="card-title h4">@Model.bio</h2>
+</div>
+<div class="card-footer">
+    <p class="badge bg-dark"><a href="#" class="text-white">Email Adresi : @Model.email</a></p>
+</div>
+

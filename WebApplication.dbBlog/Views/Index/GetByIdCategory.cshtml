@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = string.Empty;
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+
+}
+@model List<_01_WebApplication.dbBlog.Entity.Entity.posts>
+<!-- Blog post-->
+@foreach (var item in Model)
+{
+    ViewBag.Title = string.Concat(item.title," ","Kategorisine Hoşgeldiniz...");
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card mb-4">
+            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+            <div class="card-body">
+                <div class="small text-muted">@item.created_at</div>
+                <h2 class="card-title h4">@item.title</h2>
+                <p class="card-text">@item.content</p>
+                <a class="btn btn-primary" href="/PostDetails/@item.id">Read more →</a>
+            </div>
+        </div>
+    </div>
+</div>
+}
+

@@ -1,0 +1,37 @@
+﻿
+@model List<_01_WebApplication.dbBlog.Entity.Entity.posts>
+@*id, title, content, imageUrl, created_at, updated_at, authorId, categoryId*@
+<table class="table table-bordered table-hover text-center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>CONTENT</th>
+            <th>CREATE DATE</th>
+            <th>UPDATE DATE</th>
+            <th>AUTHOR</th>
+            <th>CATEGORY</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+            <th>DETAILS</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.title</td>
+                <td>@item.content</td>
+                <td>@item.created_at.ToShortDateString()</td>
+                <td>@item.updated_at.ToShortDateString()</td>
+                <td>@item.authorId</td>
+                <td>@item.categoryId</td>
+                <td><a href="/Post/Update/@item.id" class="btn btn-warning">UPDATE</a></td>
+                <td><a href="/Post/Delete/@item.id" class="btn btn-danger">DELETE</a></td>
+                <td><a href="/Post/Details/@item.id" class="btn btn-info">DETAILS</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

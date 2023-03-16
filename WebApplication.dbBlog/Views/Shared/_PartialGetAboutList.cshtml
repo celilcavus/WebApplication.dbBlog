@@ -1,0 +1,40 @@
+﻿@model List<_01_WebApplication.dbBlog.Entity.Entity.about>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            
+            <th>GITHUB</th>
+            <th>LINKEDIN</th>
+            <th>TWITTER</th>
+            <th>FACEBOOK</th>
+            <th>YOUTUBE</th>
+            <th>INSTAGRAM</th>
+            <th>ACTIVE?</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+    </thead>
+    <thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.title</td>
+                <td>@item.description</td>
+                <td>@item.githup</td>
+                <td>@item.linkedin</td>
+                <td>@item.twitter</td>
+                <td>@item.facebook</td>
+                <td>@item.youtube</td>
+                <td>@item.instagram</td>
+                <td>@item.active</td>
+                <td><a href="/About/Update/@item.Id" class="btn btn-warning">UPDATE</a></td>
+                <td><a href="/About/Delete/@item.Id" class="btn btn-danger">DELETE</a></td>
+            </tr>
+        }
+    </thead>
+</table>

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    ViewBag.SubTitle = "Welcome to Blog Home!";
+    ViewBag.Description = "Bloglarmı okumaya ne dersinnn :)";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+
+<!-- Page content-->
+<div class="row">
+    <!-- Blog entries-->
+    <div class="col-lg-8">
+        @Html.Action("PartialLastPost")
+
+
+        <div class="row">
+            @Html.Action("PartialSmallPost")
+        </div>
+        <!-- Pagination-->
+    </div>
+    <!-- Side widgets-->
+    <div class="col-lg-4">
+        <!-- Search widget-->
+        @using (Html.BeginForm("Home", "Index", FormMethod.Post))
+        {
+            <div class="card mb-4">
+                <div class="card-header">Search</div>
+                <div class="card-body">
+                    <div class="input-group">
+                        @Html.TextBox("title", null, new { @class = "form-control" })
+                        <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+                    </div>
+                </div>
+            </div>
+        }
+        @Html.Action("PartialCategory")
+    </div>
+</div>

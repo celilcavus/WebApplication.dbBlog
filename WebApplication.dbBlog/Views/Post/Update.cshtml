@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.posts
+@using (Html.BeginForm("Update", "Post", FormMethod.Post))
+{
+    @Html.Label("TITLE")
+    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+    <br />
+    @Html.Label("CONTENT")
+    @Html.TextAreaFor(x => x.content, new { @class = "form-control", @style = "height:300px;" })
+    <br />
+    @Html.Label("IMAGE")
+    @Html.TextBoxFor(x => x.imageUrl, new { @class = "form-control" })
+    <br />
+    @Html.Label("UPDATE DATE")
+    @Html.TextBoxFor(x => x.updated_at, new { @class = "form-control", @type = "date" })
+    <br />
+    @Html.Label("STATUS")
+    <select name="status" class="form-control">
+        <option value="true">TRUE</option>
+        <option value="false">FALSE</option>
+    </select>
+    <br />
+    @Html.Label("AUTHOR")
+    @Html.TextBoxFor(x => x.authorId, new { @class = "form-control" })
+    <br />
+    @Html.Label("CATEGORY")
+    @Html.TextBoxFor(x => x.categoryId, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" type="submit">Güncelle</button>
+}

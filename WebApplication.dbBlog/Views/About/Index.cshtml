@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.about
+@using (Html.BeginForm("Index", "About", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.title, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.description, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.description, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.imageUrl, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.imageUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.githup, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.githup, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.linkedin, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.linkedin, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.twitter, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.twitter, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.facebook, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.facebook, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.youtube, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.youtube, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.instagram, new { @class = "badge badge-primary" })
+    @Html.TextBoxFor(x => x.instagram, new { @class = "form-control" })
+    <br />
+    @*@Html.LabelFor(x => x.active, new { @class = "badge badge-primary" })
+        @Html.CheckBoxFor(x => x.active, new { @class = "form-control" })
+        <br />*@
+    <button class="btn btn-primary" type="submit">Kaydet!</button>
+}
+<br />
+@Html.Action("PartialGetAboutList")
+

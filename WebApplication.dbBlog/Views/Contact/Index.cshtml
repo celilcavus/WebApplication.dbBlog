@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+@model List<_01_WebApplication.dbBlog.Entity.Entity.contact>
+
+@foreach (var item in Model)
+{
+    <!-- Basic Card Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">@(string.Concat(item.name," ",item.lastname).ToUpper())</h6>
+        </div>
+        <div class="card-body">
+            <p>
+                @item.description
+            </p>
+        </div>
+        <div class="card-footer">
+            <h6 class="m-0 font-weight-bold text-primary text-black">@(string.Concat("Telefon Numara : ",item.phoneNumber, " ","Email Adress : ", item.emailAdres))</h6>
+        </div>
+    </div>
+
+
+}

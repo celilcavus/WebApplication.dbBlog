@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+@model _01_WebApplication.dbBlog.Entity.Entity.tags
+
+@using (Html.BeginForm("Index", "Tags", FormMethod.Post))
+{
+    @Html.Label("Tag Name")
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" });
+    <br />
+    @Html.Label("Description")
+    @Html.TextBoxFor(x => x.description, new { @class = "form-control" });
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+}
+<br />
+@Html.Action("PartialGetTagsList")
+
